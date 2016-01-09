@@ -2,21 +2,15 @@ package ie.gmit.sw;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 import static java.nio.charset.StandardCharsets.UTF_8;
-
 
 /* Basic implementation of the Rail Fence Cypher using a 2D char array 
  * Note that there are more efficient ways to encrypt and decrypt, but the following implementation illustrates the steps
  * involved in each process and shows how the zig-zagging works. Feel free to change / adapt. 
  */
 
-
 public class RailFence {
-	static String[] words;
-	
 	
 	//***** Encrypt a String called cypherText using an integer key ***** 
 	public String encrypt(String cypherText, int key){
@@ -136,36 +130,14 @@ public class RailFence {
 		
 	public static void main(String[] args) throws Exception{
 	
-
-		 String fullText =
-         new String(Files.readAllBytes(Paths.get("C:/Users/Stoyan_R/workspace/A Multi-threaded Cypher Breaker/bin/ie/gmit/sw/4grams.txt")), UTF_8);
-         words = fullText.split("\\s+");
-         //System.out.println(">" + words);
- 		
-
- 		
-		
-         
-		
-		
-		Scanner message = new Scanner(System.in);
-		System.out.println("Enter the message:");
-		String line = message.nextLine();
-		
-	
-		String s = new RailFence().decrypt(line, 5);
-	//	String s = new RailFence().decrypt("TTFOHATGRNREEANOETYRCIMHHAKT", 5);
+	//	Scanner message = new Scanner(System.in);
+	//	System.out.println("Enter the message:");
+	//	String line = message.nextLine();
+		  FileParser bob = new  FileParser();
+		  
+		  
+		String s = new RailFence().decrypt("19438WOOL", 5);
+		//String s = new RailFence().decrypt("TTFOHATGRNREEANOETYRCIMHHAKT", 4);
 		System.out.println(">" + s);
-		
-		
-		
-		
-		
-		
-		
-		
 	}
-
-	
-	
 }

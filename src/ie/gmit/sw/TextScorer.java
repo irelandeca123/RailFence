@@ -1,10 +1,13 @@
 package ie.gmit.sw;
 
 import java.util.Map;
+import java.util.concurrent.*;
+
 
 public class TextScorer {
-	private static final String QuadGramMap = null;
-	private Map<String, Double> map = null;
+	private Map<String, Double> map = new ConcurrentHashMap<String, Double>();
+	
+	//put into its own class
 	
 	public TextScorer(Map<String, Double> m){
 		this.map = m;
@@ -15,7 +18,7 @@ public class TextScorer {
 
 		for (int i = 0; i < text.length(); i++){
 			if (i + QuadGramMap.GRAM_SIZE <= text.length() -1){
-				score += computeLogScore(text.substring(i, i + QuadGramMap.GRAM_SIZE));
+				score += computeLogScore(text.substring(i, i + 4));
 			}
 		}
 		return score;
