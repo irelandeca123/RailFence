@@ -130,13 +130,13 @@ public class RailFence {
 		
 	public static void main(String[] args) throws Exception{
 	
-	//	Scanner message = new Scanner(System.in);
-	//	System.out.println("Enter the message:");
-	//	String line = message.nextLine();
 		  FileParser bob = new  FileParser();
+	    	bob.file += bob.bfile;
+	    	bob.readFromFile(bob.file);
+	        bob.map1 += bob.map;
+	      //  System.out.println(bob.map1);
 		  
-		  
-		String s = new RailFence().decrypt("19438WOOL", 5);
+		String s = new RailFence().decrypt(bob.map1, 5);
 		//String s = new RailFence().decrypt("TTFOHATGRNREEANOETYRCIMHHAKT", 4);
 		System.out.println(">" + s);
 	}
