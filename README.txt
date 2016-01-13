@@ -1,6 +1,5 @@
 Multi-threaded Cypher Breaker
 =============================
-
 TextScorer:
 Uses ConcurrentHashMap to store and compare the text wether is english or not
 
@@ -29,5 +28,7 @@ CypherBreaker:
 Creates thread prints
 
 =====================================================================================================
-Thats as far as I got, I had high fever last days before submission couldn't finish it up ! 
+Runner class runs the whole program + menu , I have provided Test.txt & Test2.txt for testing purposes!
+ 
+
 

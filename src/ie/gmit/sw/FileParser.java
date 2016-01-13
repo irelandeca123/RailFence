@@ -1,38 +1,26 @@
 package ie.gmit.sw;
 
-import java.awt.List;
 import java.io.*;
-import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
-import java.util.concurrent.*;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
-import junit.framework.Test;
+public class FileParser
+{
+	public Map<String, Double> parse(String file) throws Exception{
+		Map<String, Double> temp = new ConcurrentHashMap<String, Double>();
+		File File = new File(file);
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(File))); 
+		String next=null;
+		
+		while((next=br.readLine())!=null){
+			//Add each line to the parse
+			String[] stuff = next.split(" "); //separates the string and score 
+			temp.put(stuff[0], Double.parseDouble(stuff[1]));
+			//puts the string and score into the quadgram map
 
-
-public class FileParser {
+		}
+		br.close(); //closes bufferdreader
+		return temp;
+	}
 	
-	public static String file = "";
-	public static File bfile = new File(System.getProperty("user.dir") + "\\"+ "4grams.txt"); 
-	
-	
-	public static String map1="";
-	public static Map<String, Double> map = new ConcurrentHashMap<String, Double>();
-
-    public void readFromFile(String file) throws IOException {
-
-        String text = file;
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(
-                new FileInputStream(text), Charset.forName("UTF-8")));
-
-        while ((text = reader.readLine()) != null) {
-            // Splits the read line in two where the space char is the
-            // separating
-            String[] stuff = text.split(" ");
-            map.put(stuff[0], Double.parseDouble(stuff[1]));
-        }
-    }
-    
 }

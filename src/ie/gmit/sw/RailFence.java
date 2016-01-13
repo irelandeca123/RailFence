@@ -1,10 +1,5 @@
 package ie.gmit.sw;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Scanner;
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 /* Basic implementation of the Rail Fence Cypher using a 2D char array 
  * Note that there are more efficient ways to encrypt and decrypt, but the following implementation illustrates the steps
  * involved in each process and shows how the zig-zagging works. Feel free to change / adapt. 
@@ -129,15 +124,5 @@ public class RailFence {
 	}
 		
 	public static void main(String[] args) throws Exception{
-	
-		  FileParser bob = new  FileParser();
-	    	bob.file += bob.bfile;
-	    	bob.readFromFile(bob.file);
-	        bob.map1 += bob.map;
-	      //  System.out.println(bob.map1);
-		  
-		String s = new RailFence().decrypt(bob.map1, 5);
-		//String s = new RailFence().decrypt("TTFOHATGRNREEANOETYRCIMHHAKT", 4);
-		System.out.println(">" + s);
 	}
 }
